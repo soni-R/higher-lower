@@ -51,17 +51,21 @@ function compareGuess(){
       document.getElementById('inputBox').value = "";
     } else {
       document.getElementById('textOutput').innerHTML = 'Correct! you got it in ' +attempts+ ' attempts';
+      document.getElementById('container').style.backgroundColor = 'green';
       gameEnded();
     }
   } else {
     if(userGuess > computerGuess){
       document.getElementById('textOutput').innerHTML = 'You lose!' + '<br> the number was ' + computerGuess;
+      document.getElementById('container').style.backgroundColor = '#e82c4e';
       gameEnded();
     } else if(userGuess < computerGuess){
       document.getElementById('textOutput').innerHTML = 'You lose!' + '<br> the number was ' + computerGuess;
+      document.getElementById('container').style.backgroundColor = '#e82c4e';
       gameEnded();
     } else {
       document.getElementById('textOutput').innerHTML = 'Correct! you got it in ' +attempts+ ' attempts';
+      document.getElementById('container').style.backgroundColor = 'green';
       gameEnded();
     }
 
