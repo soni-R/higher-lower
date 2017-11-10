@@ -15,43 +15,16 @@
       <div class="panel">
         <h3 id="textOutput">Enter your guess below &amp; press enter</h3>
         <input type="number" id="inputBox" onchange="compareGuess()">
-        <p>Number of previous attempts: <span>0</span></p>
+        <p>Number of previous attempts: <span id="attempts"></span></p>
       </div>
 
       <div class="panel">
         <p>Your previous guesses:</p>
-        <p id="guessing"></p>
+        <p id="guessLog"></p>
       </div>
 
     </div>
 
-    <script>
-      var computerGuess;
-
-      function newGame() {
-        window.location.reload();
-      }
-
-      function init() {
-        computerGuess =Math.floor(Math.random() * 100 +1);
-        //console.log(computerGuess);
-      }
-
-      function compareGuess(){
-        var userGuess = document.getElementById('inputBox').value;
-      //  console.log(userGuess);
-      if(userGuess > computerGuess){
-          document.getElementById('textOutput').innerHTML = 'Your guess is too high';
-          document.getElementById('inputBox').value = "";
-      } else if (userGuess < computerGuess) {
-          document.getElementById('textOutput').innerHTML = 'Your guess is too low';
-          document.getElementById('inputBox').value = "";
-      } else {
-        document.getElementById('textOutput').innerHTML = 'Correct!';
-      }
-      }
-
-
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
