@@ -50,18 +50,18 @@ function compareGuess(){
       document.getElementById('textOutput').innerHTML = 'Your guess is too low';
       document.getElementById('inputBox').value = "";
     } else {
-      document.getElementById('textOutput').innerHTML = 'Correct!';
+      document.getElementById('textOutput').innerHTML = 'Correct! you got it in ' +attempts+ ' attempts';
       gameEnded();
     }
   } else {
     if(userGuess > computerGuess){
-      document.getElementById('textOutput').innerHTML = 'You lose!';
+      document.getElementById('textOutput').innerHTML = 'You lose!' + '<br> the number was ' + computerGuess;
       gameEnded();
     } else if(userGuess < computerGuess){
-      document.getElementById('textOutput').innerHTML = 'You lose!';
+      document.getElementById('textOutput').innerHTML = 'You lose!' + '<br> the number was ' + computerGuess;
       gameEnded();
     } else {
-      document.getElementById('textOutput').innerHTML = 'Correct!';
+      document.getElementById('textOutput').innerHTML = 'Correct! you got it in ' +attempts+ ' attempts';
       gameEnded();
     }
 
