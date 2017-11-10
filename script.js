@@ -3,6 +3,13 @@ var userGuessLog = [];
 var attempts = 0;
 var maxGuesses = 10;
 
+function gameEnded(){
+  document.getElementById('newGameButton').style.display = 'inline';
+  document.getElementById('easyBtn').style.display = 'none';
+  document.getElementById('hardBtn').style.display = 'none';
+  document.getElementById('inputBox').setAttribute('readonly', 'readonly');
+}
+
 function easyMode(){
   maxGuesses = 10;
   document.getElementById('easyBtn').className = 'activeButton';
@@ -44,14 +51,18 @@ function compareGuess(){
       document.getElementById('inputBox').value = "";
     } else {
       document.getElementById('textOutput').innerHTML = 'Correct!';
+      gameEnded();
     }
   } else {
     if(userGuess > computerGuess){
       document.getElementById('textOutput').innerHTML = 'You lose!';
+      gameEnded();
     } else if(userGuess < computerGuess){
       document.getElementById('textOutput').innerHTML = 'You lose!';
+      gameEnded();
     } else {
       document.getElementById('textOutput').innerHTML = 'Correct!';
+      gameEnded();
     }
 
   }
